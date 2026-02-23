@@ -35,4 +35,26 @@ function toggleStyle(id) {
   const selected = document.getElementById(id);
   selected.className =
     "bg-[#3B82F6] px-3 py-2 text-white font-semibold text-[12px] w-20 rounded-sm cursor-pointer";
+
+  if (id === "allTab") currentStatus = "all";
+  if (id === "interviewTab") currentStatus = "interview";
+  if (id === "rejectedTab") currentStatus = "rejected";
+
+  applyFilter();
+}
+function applyFilter() {
+  const cards = document.querySelectorAll(".card");
+  let visibleCount = 0;
+
+  cards.forEach((card) => {
+    if (currentStatus === "all") {
+      card.style.display = "block";
+      visibleCount++;
+    } else if (card.getAttribute("data-status") === currentStatus) {
+      card.style.display = "block";
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
+  });
 }
