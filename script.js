@@ -57,4 +57,25 @@ function applyFilter() {
       card.style.display = "none";
     }
   });
+
+  showEmptyState(visibleCount);
+  calculateCount();
+}
+
+function showEmptyState(count) {
+  document.querySelector(".empty-state")?.remove();
+
+  if (count === 0) {
+    const emptyDiv = document.createElement("div");
+    emptyDiv.className =
+      "empty-state text-center py-16 bg-white border border-[#F1F2F4] rounded-2 space-y-5";
+    emptyDiv.innerHTML = `
+            <img src="jobs.png" class="w-24 mx-auto mb-4 opacity-60" />
+      <div class="space-y-1">
+        <h1 class="text-[#002C5C] text-2xl font-semibold">No jobs available</h1>
+        <p class="text-[#64748B]">Check back soon for new job opportunities</p>
+      </div>
+        `;
+    allCardSection.appendChild(emptyDiv);
+  }
 }
