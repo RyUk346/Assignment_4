@@ -79,3 +79,28 @@ function showEmptyState(count) {
     allCardSection.appendChild(emptyDiv);
   }
 }
+
+document.querySelector("main").addEventListener("click", function (event) {
+  const card = event.target.closest(".card");
+  if (!card) return;
+
+  // intervieBtn
+  if (event.target.classList.contains("interviewBtn")) {
+    card.setAttribute("data-status", "interview");
+    card.querySelector(".status").innerText = "INTERVIEW";
+    card.querySelector(".status").className =
+      "status bg-[#DCFCE7] text-[#16A34A] px-3 py-2 font-medium text-[14px]";
+    calculateCount();
+    applyFilter();
+  }
+
+  // rejectBtn
+  if (event.target.classList.contains("rejectedBtn")) {
+    card.setAttribute("data-status", "rejected");
+    card.querySelector(".status").innerText = "REJECTED";
+    card.querySelector(".status").className =
+      "status bg-[#FEE2E2] text-[#DC2626] px-3 py-2 font-medium text-[14px]";
+    calculateCount();
+    applyFilter();
+  }
+});
