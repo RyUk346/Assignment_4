@@ -1,17 +1,18 @@
 # Assignment_4
 PH_B13_a4
+
+
 **1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?**
 Ans:
-# getElementById: 
-Using this, we can select a specific HTML element by its ID. This works faster than other methods.
+getElementById: Using this, we can select a specific HTML element by its ID. This works faster than other methods.
 const total = document.getElementById("total");
 total.style.color = "red";// it will make the element color to red
-# getElementsByClassName:
-By using this, we can select all the elements with the same class name, which will return an array-like HTML collection.
+
+getElementsByClassName: By using this, we can select all the elements with the same class name, which will return an array-like HTML collection.
 const name = document.getElementById("name");
 name.className = "text-xl"//it will make all the elements with name class text size xl;
-# querySelector / querySelectorAll: 
-Both works like css selector, we can select id, class, and elements. querySelector selects the first element only of the css selector syntax, on the other hand, querySelectorAll slects every element of the css selector syntax. it returns a nodelist
+
+querySelector / querySelectorAll: Both works like css selector, we can select id, class, and elements. querySelector selects the first element only of the css selector syntax, on the other hand, querySelectorAll slects every element of the css selector syntax. it returns a nodelist
 const allCardSection = document.querySelectorAll(".card");
 total.innerText = allCardSection.length;//returns the number of total element with card class
 
