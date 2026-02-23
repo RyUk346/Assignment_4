@@ -103,4 +103,11 @@ document.querySelector("main").addEventListener("click", function (event) {
     calculateCount();
     applyFilter();
   }
+
+  // deleteBtn
+  if (event.target.closest(".deleteBtn")) {
+    card.remove();
+    calculateCount();
+    applyFilter();
+  }
 });
