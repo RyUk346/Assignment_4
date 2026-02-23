@@ -24,3 +24,15 @@ function calculateCount() {
   //   availableJobs.innerText = allCardSection.children.length;
 }
 calculateCount();
+function toggleStyle(id) {
+  allTab.className =
+    "bg-[#FFFFFF] border border-[#F1F2F4] px-3 py-2 text-[#64748B] font-semibold text-[12px] w-20 rounded-sm cursor-pointer";
+  interviewTab.className =
+    "bg-[#FFFFFF] border border-[#F1F2F4] px-3 py-2 text-[#64748B] font-semibold text-[12px] w-20 rounded-sm cursor-pointer";
+  rejectedTab.className =
+    "bg-[#FFFFFF] border border-[#F1F2F4] px-3 py-2 text-[#64748B] font-semibold text-[12px] w-20 rounded-sm cursor-pointer";
+
+  const selected = document.getElementById(id);
+  selected.className =
+    "bg-[#3B82F6] px-3 py-2 text-white font-semibold text-[12px] w-20 rounded-sm cursor-pointer";
+}
